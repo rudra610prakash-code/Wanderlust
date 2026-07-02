@@ -1,0 +1,125 @@
+<% if(success && success.length) {%>
+
+<div  class="alert alert-success" role="alert">
+ <%= success  %>
+</div>
+
+<% }   %>
+
+
+<style>
+    /* ===========================
+   Modern Success Flash Alert
+   =========================== */
+
+.alert-success {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    min-width: 280px;
+    max-width: 360px;
+
+    padding: 14px 18px;
+    border: none;
+    border-left: 5px solid #16a34a;
+    border-radius: 14px;
+
+    background: #ffffff;
+    color: #1f2937;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12),
+        0 4px 10px rgba(0,0,0,0.06);
+
+    animation: slideIn 0.45s ease;
+}
+
+/* Green check icon */
+.alert-success::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    margin-right: 10px;
+
+    background: #16a34a;
+    color: white;
+
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+</style>
+
+
+
+
+
+<script>
+setTimeout(() => {
+    const alert = document.querySelector(".alert-success");
+    if (alert) {
+        alert.style.transition = "all 0.4s ease";
+        alert.style.opacity = "0";
+        alert.style.transform = "translateX(50px)";
+
+        setTimeout(() => {
+            alert.remove();
+        }, 400);
+    }
+}, 3000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- for error -->
+
+<% if (error && error.length) { %>
+
+<div class="alert alert-danger alert-dismissible fade show col-6 offset-3"
+     role="alert">
+
+    <%= error %>
+
+    <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close">
+    </button>
+
+</div>
+
+<% } %>

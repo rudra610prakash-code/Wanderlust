@@ -1,0 +1,384 @@
+<% layout("boilerplate.ejs") %>
+
+<style>
+/* ===============================
+   WANDERLUST SIGNUP PAGE
+=================================*/
+
+body{
+    background: linear-gradient(135deg,#f8fafc,#eef2ff,#f3f4f6);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.signup-section{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 15px;
+}
+
+.signup-card{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(18px);
+    border-radius:22px;
+    padding:40px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08),
+        0 8px 25px rgba(0,0,0,.05);
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    margin:auto;
+    background:linear-gradient(135deg,#ff385c,#ff6b6b);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    color:white;
+    margin-bottom:18px;
+    box-shadow:0 12px 25px rgba(255,56,92,.35);
+}
+
+.signup-title{
+    font-size:2rem;
+    font-weight:700;
+    text-align:center;
+    color:#222;
+}
+
+.signup-subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:35px;
+}
+
+.form-label{
+    font-weight:600;
+    color:#444;
+}
+
+.form-control{
+    height:55px;
+    border-radius:14px;
+    border:1px solid #ddd;
+    transition:.3s;
+    font-size:15px;
+}
+
+.form-control:focus{
+    border-color:#ff385c;
+    box-shadow:0 0 0 .2rem rgba(255,56,92,.15);
+}
+
+.input-group-text{
+    background:white;
+    border-radius:0 14px 14px 0;
+    cursor:pointer;
+}
+
+.strength{
+    height:6px;
+    width:100%;
+    background:#ececec;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:8px;
+}
+
+.strength-bar{
+    height:100%;
+    width:0%;
+    transition:.4s;
+    border-radius:20px;
+}
+
+#strengthText{
+    font-size:13px;
+    margin-top:6px;
+    font-weight:600;
+}
+
+.signup-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#ff385c,#ff6b6b);
+    color:white;
+    font-weight:600;
+    font-size:17px;
+    transition:.3s;
+}
+
+.signup-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(255,56,92,.35);
+}
+
+.footer-link{
+    text-align:center;
+    margin-top:25px;
+    color:#666;
+}
+
+.footer-link a{
+    color:#ff385c;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.footer-link a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:576px){
+
+.signup-card{
+    padding:28px;
+}
+
+.signup-title{
+    font-size:1.7rem;
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    font-size:28px;
+}
+
+}
+</style>
+
+<div class="signup-section">
+
+<div class="signup-card">
+
+<div class="logo">
+<i class="fa-solid fa-earth-americas"></i>
+</div>
+
+<h2 class="signup-title">
+Create Account
+</h2>
+
+<p class="signup-subtitle">
+Join Wanderlust and explore amazing destinations.
+</p>
+
+<form action="/signup" method="POST" class="needs-validation" novalidate>
+
+<div class="mb-3">
+
+<label class="form-label" for="username">
+Username
+</label>
+
+<input
+type="text"
+class="form-control"
+id="username"
+name="username"
+placeholder="Enter username"
+required>
+
+<div class="invalid-feedback">
+Please enter a username.
+</div>
+
+</div>
+
+
+<div class="mb-3">
+
+<label class="form-label" for="email">
+Email Address
+</label>
+
+<input
+type="email"
+class="form-control"
+id="email"
+name="email"
+placeholder="example@gmail.com"
+required>
+
+<div class="invalid-feedback">
+Please enter a valid email.
+</div>
+
+</div>
+
+
+
+<div class="mb-3">
+
+<label class="form-label" for="password">
+Password
+</label>
+
+<div class="input-group">
+
+<input
+type="password"
+class="form-control"
+id="password"
+name="password"
+placeholder="Create password"
+required>
+
+<span class="input-group-text" id="togglePassword">
+👁
+</span>
+
+</div>
+
+<div class="strength">
+<div class="strength-bar" id="strengthBar"></div>
+</div>
+
+<div id="strengthText">
+Password Strength
+</div>
+
+<div class="invalid-feedback">
+Please enter a password.
+</div>
+
+</div>
+
+
+<button class="signup-btn">
+Create Account
+</button>
+
+<!-- <div class="footer-link">
+Already have an account?
+<a href="/views/users/login.ejs">Login</a>
+</div> -->
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+// Bootstrap Validation
+
+(() => {
+
+'use strict'
+
+const forms=document.querySelectorAll('.needs-validation')
+
+Array.from(forms).forEach(form=>{
+
+form.addEventListener('submit',event=>{
+
+if(!form.checkValidity()){
+
+event.preventDefault()
+event.stopPropagation()
+
+}
+
+form.classList.add('was-validated')
+
+},false)
+
+})
+
+})();
+
+
+// Password Show Hide
+
+const password=document.getElementById("password");
+const toggle=document.getElementById("togglePassword");
+
+toggle.addEventListener("click",()=>{
+
+const type=password.getAttribute("type")==="password" ? "text":"password";
+
+password.setAttribute("type",type);
+
+toggle.innerHTML=type==="password"?"👁":"🙈";
+
+});
+
+
+// Password Strength
+
+const bar=document.getElementById("strengthBar");
+const text=document.getElementById("strengthText");
+
+password.addEventListener("input",()=>{
+
+let value=password.value;
+
+let strength=0;
+
+if(value.length>=8) strength++;
+
+if(/[A-Z]/.test(value)) strength++;
+
+if(/[0-9]/.test(value)) strength++;
+
+if(/[^A-Za-z0-9]/.test(value)) strength++;
+
+switch(strength){
+
+case 0:
+bar.style.width="0%";
+bar.style.background="gray";
+text.innerHTML="Password Strength";
+break;
+
+case 1:
+bar.style.width="25%";
+bar.style.background="#ff4d4f";
+text.innerHTML="Weak";
+break;
+
+case 2:
+bar.style.width="50%";
+bar.style.background="#faad14";
+text.innerHTML="Fair";
+break;
+
+case 3:
+bar.style.width="75%";
+bar.style.background="#52c41a";
+text.innerHTML="Good";
+break;
+
+case 4:
+bar.style.width="100%";
+bar.style.background="#16a34a";
+text.innerHTML="Strong";
+break;
+
+}
+
+});
+</script>

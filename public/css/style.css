@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Monoton&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background: linear-gradient(135deg,#0f172a,#1e293b,#334155);
+}
+
+.container{
+    flex: 1;
+}
+
+/* NAVBAR */
+.navbar{
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+
+
+
+
+
+
+
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #000000 !important;
+    font-weight: 600 !important;
+}
+/* Footer */
+footer {
+    margin-top: 3rem;
+}
+
+.f-info {
+    background: #f8f9fa;
+    min-height: 8rem;
+    padding: 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    border-top: 1px solid #e9ecef;
+}
+
+/* Social Icons */
+.f-info-socials {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.f-info-socials i {
+    font-size: 1.4rem;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.f-info-socials i:hover {
+    color: #fe424d;
+    transform: translateY(-4px) scale(1.15);
+}
+
+/* Copyright */
+.f-info div:nth-child(2) {
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Footer Links */
+.f-info-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+.f-info-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #fe424d;
+    transition: width 0.3s ease;
+}
+
+.f-info-links a:hover {
+    color: #fe424d;
+}
+
+.f-info-links a:hover::after {
+    width: 100%;
+}
+
+.f-info {
+    background-color: #ebebeb;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+}
+
+/* cards */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+
+
+
+}
+
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+}
+
+/* crad Effect */
+
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+
+/* Page Background */
+body {
+    background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Form Container */
+.listing-form {
+    max-width: 750px;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.listing-form h3 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #222;
+}
+
+/* Labels */
+.form-label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+/* Inputs & Textarea */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect */
+.form-control:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.15);
+}
+
+/* Textarea */
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Custom Button */
+.btn-custom {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #fe424d !important;
+    border: none;
+    color: white !important;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Button Hover */
+.btn-custom:hover {
+    background-color: #e63946 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(254, 66, 77, 0.3) !important;
+}
+
+/* Button Active */
+.btn-custom:active {
+    transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .listing-form {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .listing-form h3 {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+
+/* ==========================
+   NAVBAR MENU
+========================== */
+
+.navbar-nav{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.navbar-nav .nav-item{
+    position:relative;
+}
+
+.navbar-nav .nav-link{
+    position:relative;
+    color:#222 !important;
+    font-size:15px;
+    font-weight:600;
+    padding:10px 18px !important;
+    border-radius:999px;
+    transition:all .35s ease;
+    overflow:hidden;
+    letter-spacing:.2px;
+}
+
+/* Hover Background */
+
+.navbar-nav .nav-link:hover{
+    background:#f7f7f7;
+    color:#FF385C !important;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Active Click */
+
+.navbar-nav .nav-link:active{
+    transform:scale(.96);
+}
+
+/* Animated Underline */
+
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:6px;
+    width:0%;
+    height:3px;
+    background:#FF385C;
+    border-radius:10px;
+    transition:.35s;
+    transform:translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after{
+    width:55%;
+}
+
+/* Active Page */
+
+.navbar-nav .nav-link.active{
+    color:#FF385C !important;
+    background:rgba(255,56,92,.08);
+}
+
+.navbar-nav .nav-link.active::after{
+    width:55%;
+}
+
+/* Small Shine Effect */
+
+.navbar-nav .nav-link::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+    transition:.6s;
+}
+
+.navbar-nav .nav-link:hover::before{
+    left:140%;
+}
+
+
