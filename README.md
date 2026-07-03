@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+
 
 ![Node Version](https://img.shields.io/badge/Node-24.16.0-green?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB-13aa52?style=flat-square)
