@@ -547,48 +547,6 @@ class ExpressError extends Error {
 
 ---
 
-## 🛠️ Development
-
-### Current Status
-- ✅ Core functionality complete
-- ✅ Authentication system working
-- ✅ Image uploads with Cloudinary
-- ✅ Review system implemented
-- ✅ Error handling in place
-
-### Potential Enhancements
-
-1. **Search & Filtering**
-   - Advanced search by location, price range
-   - Filtering by rating and amenities
-
-2. **Additional Features**
-   - User profiles and reviews history
-   - Favorites/Wishlist functionality
-   - Booking system integration
-   - Payment gateway integration
-
-3. **Performance**
-   - Pagination for listings
-   - Image caching optimization
-   - Database indexing
-
-4. **Admin Panel**
-   - User management
-   - Listing moderation
-   - Analytics dashboard
-
-5. **Mobile App**
-   - React Native / Flutter version
-   - Native image upload
-
----
-
-## 📝 License
-
-This project is licensed under the **ISC License** - see the LICENSE file for details.
-
----
 
 ## 👨‍💻 Author
 
@@ -598,31 +556,10 @@ This project is licensed under the **ISC License** - see the LICENSE file for de
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
----
 
-## 📞 Support
-
-If you encounter any issues or have questions, please:
-- Open an issue on GitHub
-- Check existing documentation
-- Review error messages in console
-
----
-
-<div align="center">
 
 ### Made with ❤️ by Rudra Prakash
 
-⭐ If you find this project helpful, please give it a star!
-
-</div>
