@@ -31,8 +31,7 @@
 - [🔐 Authentication & Security](#-authentication--security)
 - [🎨 Frontend](#-frontend)
 - [📚 Project Components](#-project-components)
-- [🛠️ Development](#️-development)
-- [📝 License](#-license)
+
 - [👨‍💻 Author](#-author)
 
 ---
